@@ -1,0 +1,40 @@
+4. triangle:
+
+CODE:
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Polygon;
+import javafx.stage.Stage;
+
+public class TriangleExample extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+        // Create a Polygon (triangle) with three points
+        Polygon triangle = new Polygon();
+        triangle.getPoints().addAll(
+            100.0, 150.0,  // First point (x1, y1)
+            200.0, 50.0,   // Second point (x2, y2)
+            300.0, 150.0   // Third point (x3, y3)
+        );
+
+        // Set the fill color of the triangle
+        triangle.setFill(Color.LIGHTBLUE);
+
+        // Create a Pane to hold the triangle
+        Pane pane = new Pane();
+        pane.getChildren().add(triangle);
+
+        // Create a Scene and place it in the Stage
+        Scene scene = new Scene(pane, 400, 300);
+        primaryStage.setTitle("Triangle Example");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
