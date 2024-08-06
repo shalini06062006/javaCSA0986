@@ -1,0 +1,44 @@
+5. parallelogram:
+
+CODE:
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Polygon;
+import javafx.stage.Stage;
+
+public class ParallelogramApp extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+        // Create a Pane to hold the shapes
+        Pane pane = new Pane();
+
+        // Create a Polygon representing a parallelogram
+        Polygon parallelogram = new Polygon();
+        parallelogram.getPoints().addAll(
+                50.0, 50.0,  // Top-left corner
+                150.0, 50.0,  // Top-right corner
+                200.0, 150.0, // Bottom-right corner
+                100.0, 150.0  // Bottom-left corner
+        );
+        parallelogram.setFill(Color.LIGHTBLUE); // Fill color
+        parallelogram.setStroke(Color.BLACK);   // Outline color
+
+        // Add the parallelogram to the pane
+        pane.getChildren().add(parallelogram);
+
+        // Create a Scene with the pane
+        Scene scene = new Scene(pane, 300, 250);
+
+        // Set up the Stage (window) and show it
+        primaryStage.setTitle("Parallelogram Example");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
