@@ -1,0 +1,42 @@
+3. javafx square:
+
+CODE:
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
+
+public class CircleExample extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+        // Create a circle with a center at (100, 100) and a radius of 50
+        Circle circle = new Circle();
+        circle.setCenterX(100);
+        circle.setCenterY(100);
+        circle.setRadius(50);
+        
+        // Set the fill color of the circle (e.g., blue)
+        circle.setFill(Color.BLUE);
+        
+        // Create a pane to hold the circle
+        Pane pane = new Pane();
+        pane.getChildren().add(circle);
+        
+        // Create a scene and place the pane in it
+        Scene scene = new Scene(pane, 300, 200);
+        
+        // Set the stage title and add the scene to the stage
+        primaryStage.setTitle("Circle Example");
+        primaryStage.setScene(scene);
+        
+        // Show the stage
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
