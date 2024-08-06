@@ -1,0 +1,41 @@
+1. rectangle:
+
+CODE:
+ import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
+
+public class RectangleExample extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+        // Create a Rectangle object
+        Rectangle rectangle = new Rectangle();
+        rectangle.setWidth(200);   // Set the width of the rectangle
+        rectangle.setHeight(100);  // Set the height of the rectangle
+        rectangle.setFill(Color.BLUE); // Set the color of the rectangle
+
+        // Create a StackPane to hold the rectangle
+        StackPane root = new StackPane();
+        root.getChildren().add(rectangle);
+
+        // Create a Scene with the StackPane as the root node
+        Scene scene = new Scene(root, 400, 300); // Width and height of the scene
+
+        // Set the title of the stage (window)
+        primaryStage.setTitle("Rectangle Example");
+
+        // Add the scene to the stage
+        primaryStage.setScene(scene);
+
+        // Show the stage
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
